@@ -42,9 +42,7 @@ app.get("*", function (req, res) {
     requester.post(
       {
         headers: JSON.parse(headerss),
-        url: urrrl,
-        body: req.body,
-        json: true,
+        url: urrrl
       }
     ).pipe(res);
   } else {
