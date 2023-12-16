@@ -50,7 +50,12 @@ app.get("*", function (req, res) {
   } else {
     console.log(urrrl);
     console.log(3);
-    requester.get(urrrl).pipe(res);
+    requester.get(
+      {
+        headers: JSON.parse(headerss),
+        url: urrrl
+      }
+    ).pipe(res);
   }
 });
 
