@@ -38,25 +38,12 @@ app.get("*", function (req, res) {
   var querystring = req.url;
   var urrrl = "http://185.236.78.147:6070" + req.url;
 
-  if (!querystring.includes("assets") || !querystring.includes(".")) {
-    console.log(urrrl);
-    console.log(2);
-    requester.get(
+   requester.get(
       {
         headers: JSON.parse(headerss),
         url: urrrl
       }
     ).pipe(res);
-  } else {
-    console.log(urrrl);
-    console.log(3);
-    requester.get(
-      {
-        headers: JSON.parse(headerss),
-        url: urrrl
-      }
-    ).pipe(res);
-  }
 });
 
 app.listen(process.env.PORT, "0.0.0.0", function () {
