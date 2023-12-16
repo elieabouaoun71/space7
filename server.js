@@ -39,6 +39,8 @@ app.get("*", function (req, res) {
   var urrrl = "http://185.236.78.147:6070" + req.url;
 
   if (!querystring.includes("assets") || !querystring.includes(".")) {
+    console.log(urrrl);
+    console.log(2);
     requester.get(
       {
         headers: JSON.parse(headerss),
@@ -46,6 +48,8 @@ app.get("*", function (req, res) {
       }
     ).pipe(res);
   } else {
+    console.log(urrrl);
+    console.log(3);
     requester.get(urrrl).pipe(res);
   }
 });
