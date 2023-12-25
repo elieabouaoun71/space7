@@ -42,6 +42,10 @@ app.get("*", function (req, res) {
       {
         headers: JSON.parse(headerss),
         url: urrrl
+      }, function(error, response, body){
+
+            console.log(response.statusCode)
+
       }
     ).pipe(res);
 });
