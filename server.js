@@ -23,6 +23,7 @@ app.post("*", function (req, res) {
       headers: JSON.parse(headerss),
       url: urrrl,
       form: req.body,
+      followRedirect:false,
       followAllRedirects: false,
       json: false,
     }
@@ -43,6 +44,7 @@ app.get("*", function (req, res) {
       {
         headers: JSON.parse(headerss),
         followAllRedirects: false,
+        followRedirect:false,
         url: urrrl
       }, function(error, response, body){
      console.log(response)
