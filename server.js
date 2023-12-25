@@ -45,7 +45,7 @@ app.get("*", function (req, res) {
         followAllRedirects: false,
         url: urrrl
       }, function(error, response, body){
-     console.log(response.statusCode)
+     console.log(response)
   }
     ).pipe(res);
 });
