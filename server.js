@@ -23,7 +23,7 @@ app.post("*", function (req, res) {
       headers: JSON.parse(headerss),
       url: urrrl,
       form: req.body,
-      followAllRedirects: true,
+      followAllRedirects: false,
       json: false,
     }
   ).pipe(res);
@@ -42,9 +42,11 @@ app.get("*", function (req, res) {
    requester.get(
       {
         headers: JSON.parse(headerss),
-        followAllRedirects: true,
+        followAllRedirects: false,
         url: urrrl
-      }
+      }, function(error, response, body){
+     console.log(response.statusCode)
+  }
     ).pipe(res);
 });
 
