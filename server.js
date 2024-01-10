@@ -47,7 +47,7 @@ app.get("*", function (req, res) {
         followRedirect:false,
         url: urrrl
       }, function(error, response, body){
-     console.log(response)
+      console.log(response)
   }
     ).pipe(res);
 });
